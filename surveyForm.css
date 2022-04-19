@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  background-image: url(./image/survey.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+}
+header {
+  margin: 0;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.831);
+}
+h1 img {
+  float: left;
+  width: 230px;
+  height: 70px;
+  margin: 0px;
+  padding-top: 15px;
+}
+h1 {
+  margin: 0;
+  position: relative;
+  padding: 25px 260px 15px 5px;
+  background-color: rgba(0, 0, 0, 0.831);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+fieldset {
+  background-color: rgba(0, 0, 0, 0.831);
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 5px 35px 5px 45px;
+  text-align: left;
+  display: inline-block;
+  font-size: 15px;
+  margin: 25px 0px;
+}
+fieldset input {
+  text-align: center;
+  padding: 10px 150px;
+  margin: 2px 0px;
+}
+fieldset input:hover {
+  background-color: #ebd7a1;
+  cursor: pointer;
+}
+#select1 {
+  padding: 10px 120px;
+}
+#select1:hover {
+  background-color: #ebd7a1;
+  cursor: pointer;
+}
+#select2 {
+  padding: 10px 170px;
+}
+#select2:hover {
+  background-color: #ebd7a1;
+  cursor: pointer;
+}
+#comments {
+  padding: 50px 150px;
+  background-image: url(./image/Comment.png);
+  background-size: 100px;
+  background-repeat: no-repeat;
+}
+#comments:hover {
+  background-color: #ebd7a1;
+  cursor: pointer;
+}
+#submit {
+  background-color: rgb(26, 91, 14);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px 200px;
+  margin: 20px 0px;
+  border: none;
+  cursor: pointer;
+}
+#submit:hover {
+  background-color: rgb(51, 207, 23);
+  text-decoration: underline;
+}
