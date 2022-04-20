@@ -7,8 +7,14 @@ function User() {
     },
     add(item) {
       this.usersList.push(item);
-      this.usersList.forEach((element, index) => {
-        element.ID = index + 1;
+      this.usersList.forEach((item) => {
+        let id =
+          item.name[0] +
+          item.lastName[1] +
+          item.education[2] +
+          item.age.toString() +
+          item.age[0].toString();
+        return (item.ID = id);
       });
       return this.usersList;
     },
@@ -96,7 +102,7 @@ console.log(
     education: "physics",
   })
 );
-//[{ name: "ali", lastName: "salami",age: "18" ,education: "physics",ID:1}]
+//[{ name: "ali", lastName: "salami",age: "18" ,education: "physics",ID:"aay181"}]
 console.log(
   userManager.add({
     name: "reza",
@@ -105,7 +111,7 @@ console.log(
     education: "art",
   })
 );
-//[{ name: "ali", lastName: "salami",age: "18" ,education: "physics",ID:1},{ name: "reza",lastName: "sadeghi", age: "28" ,education: "art",ID:2}]
+//[{ name: "ali", lastName: "salami",age: "18" ,education: "physics",ID:"aay181"},{ name: "reza",lastName: "sadeghi", age: "28" ,education: "art",ID:"rat282"}]
 console.log(
   userManager.add({
     name: "jahan",
@@ -114,24 +120,24 @@ console.log(
     education: "chemistry",
   })
 );
-//[{ name: "ali", lastName: "salami",age: "18" ,education: "physics",ID:1},{ name: "reza",lastName: "sadeghi", age: "28" ,education: "art",ID:2},{ name: "jahan",lastName: "abedi",age: "24" ,education: "chemistry",ID:3}]
-console.log(userManager.remove(2));
-//{ name: "reza",lastName: "sadeghi", age: "28" ,education: "art",ID:2}
+//[{ name: "ali", lastName: "salami",age: "18" ,education: "physics",ID:"aay181"},{ name: "reza",lastName: "sadeghi", age: "28" ,education: "art",ID:"rat282"},{ name: "jahan",lastName: "abedi",age: "24" ,education: "chemistry",ID:"jbe242"}]
+console.log(userManager.remove("rat282"));
+//{ name: "reza",lastName: "sadeghi", age: "28" ,education: "art",ID:"rat282"}]}
 console.log(
-  userManager.change(1, {
+  userManager.change("aay181", {
     name: "ahmad",
     lastName: "safdari",
     age: "26",
     education: "geology",
   })
 );
-//{ name: "ahmad",lastName: "safdari",education:"geology" , age: "26" , ID:1}
-console.log(userManager.findById(1));
-//{ name: "ahmad",lastName: "safdari",education:"geology" , age: "26" , ID:1}
-console.log(userManager.export(3));
-//[{ name: "jahan",lastName: "abedi",age: "24" ,education: "chemistry",ID:3}]
+//{ name: "ahmad",lastName: "safdari",education:"geology" , age: "26" , ID:"aay181"}
+console.log(userManager.findById("aay181"));
+//{ name: "ahmad",lastName: "safdari",education:"geology" , age: "26" , ID:"aay181"}
+console.log(userManager.export("jbe242"));
+//[{ name: "jahan",lastName: "abedi",age: "24" ,education: "chemistry",ID:"jbe242"}]
 console.log(
-  userManager.export(3) ===
+  userManager.export("jbe242") ===
     {
       name: "jahan",
       lastName: "abedi",
@@ -148,12 +154,12 @@ console.log(
       lastName: "abedi",
       age: "24",
       education: "chemistry",
-      ID: 3,
+      ID: "jbe242",
     }
 );
 console.log(userManager.sort("age"));
-//[{ name: "jahan",lastName: "abedi",age: "24" ,education: "chemistry",ID:3},{ name: "ahmad",lastName: "safdari",education:"geology" , age: "26" , ID:1}]
+//[{ name: "jahan",lastName: "abedi",age: "24" ,education: "chemistry",ID="jbe242"},{ name: "ahmad",lastName: "safdari",education:"geology" , age: "26" , ID:"aay181"}]
 console.log(userManager.filter({ age: { s: 25, e: 27 } }));
-//[{ name: "ahmad",lastName: "safdari",education:"geology" , age: "26" , ID:1}]
+//[{ name: "ahmad",lastName: "safdari",education:"geology" , age: "26" , ID:"aay181"}]
 console.log(userManager.ListOfUsers());
-//[{ name: "jahan",lastName: "abedi",age: "24" ,education: "chemistry",ID:3},{ name: "ahmad",lastName: "safdari",education:"geology" , age: "26" , ID:1}]
+//[{ name: "jahan",lastName: "abedi",age: "24" ,education: "chemistry",ID="jbe242"},{ name: "ahmad",lastName: "safdari",education:"geology" , age: "26" , ID:"aay181"}]
